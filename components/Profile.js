@@ -13,7 +13,7 @@ class Profile extends React.Component {
 		return (
 			<View style={styles.container}>
 				<Text>Profile Screen</Text>
-				<Text>{this.props.user.email}</Text>
+				<Text>Welcome {this.props.user.userName}</Text>
 				<Button title='Logout' onPress={this.handleSignout} />
 			</View>
 		)

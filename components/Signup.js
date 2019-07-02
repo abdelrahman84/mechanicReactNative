@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-nativ
 import Firebase from '../config/Firebase'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateEmail, updatePassword, signup } from '../actions/user'
+import { updateEmail, updatePassword, signup, updateUserName } from '../actions/user'
 
 class Signup extends React.Component {
 
@@ -16,6 +16,13 @@ class Signup extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <TextInput
+					style={styles.inputBox}
+					value={this.props.user.userName}
+					onChangeText={userName => this.props.updateUserName(userName)}
+					placeholder='user name'
+					autoCapitalize='none'
+				/>
 				<TextInput
 					style={styles.inputBox}
 					value={this.props.user.email}
@@ -76,7 +83,7 @@ const styles = StyleSheet.create({
 })
 
 const mapDispatchToProps = dispatch => {
-    return bindActionCreators({ updateEmail, updatePassword, signup }, dispatch)
+    return bindActionCreators({ updateEmail, updatePassword, signup, updateUserName }, dispatch)
 }
 
 const mapStateToProps = state => {
