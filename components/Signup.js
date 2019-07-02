@@ -48,7 +48,7 @@ class Signup extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#808080',
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         paddingVertical: 5,
         alignItems: 'center',
-        backgroundColor: '#FFA611',
+        backgroundColor: '#808080',
         borderColor: '#FFA611',
         borderWidth: 1,
         borderRadius: 5,

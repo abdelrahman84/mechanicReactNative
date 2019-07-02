@@ -49,7 +49,7 @@ class Login extends React.Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
+		backgroundColor: '#808080',
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
 		marginBottom: 20,
 		paddingVertical: 5,
 		alignItems: 'center',
-		backgroundColor: '#F6820D',
+		backgroundColor: '#808080',
 		borderColor: '#F6820D',
 		borderWidth: 1,
 		borderRadius: 5,
