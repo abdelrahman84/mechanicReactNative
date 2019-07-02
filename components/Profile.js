@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { View, TextInput, Text, StyleSheet, Button, TouchableOpacity, Image } from 'react-native'
 import { connect } from 'react-redux'
-import Firebase from '../config/Firebase'
+import Firebase, { db } from '.././config/Firebase'
+import { bindActionCreators } from 'redux'
+import { updateEmail, updatePassword, login, getUser, updateUserName } from '../actions/user'
 
 class Profile extends React.Component {
+	
 	state = {
 		currentKilos: 0
 	}
 
+    updateKilos = () => {
+		db.collection('users').doc(this.props.user.uid).collection('mainData').doc('currentKilos').set({currentKilos: this.state.currentKilos})
+		alert('Data Updated')
+	}
 
 	handleSignout = () => {
 		Firebase.auth().signOut()
@@ -30,9 +37,13 @@ class Profile extends React.Component {
                     placeholder='current Kilos'
                     />
 
+               <TouchableOpacity style={styles.button} onPress={this.updateKilos}>
+					<Text style={styles.buttonText}>Confirm</Text>
+				</TouchableOpacity>
+
 			
 
-				<TouchableOpacity style={styles.button} onPress={this.handleSignout}>
+				<TouchableOpacity style={styles.logout} onPress={this.handleSignout}>
 					<Text style={styles.buttonText}>Logout</Text>
 				</TouchableOpacity>
 			</View>
@@ -50,7 +61,7 @@ const styles = StyleSheet.create({
 		padding: 30,
 
 	},
-	button: {
+	logout: {
 		height: 50,
 		backgroundColor: '#1E90FF',
 		position: 'absolute',
@@ -76,6 +87,17 @@ const styles = StyleSheet.create({
         borderColor: '#d3d3d3',
         borderBottomWidth: 1,
 		textAlign: 'center'
+	},
+	button: {
+		marginTop: 30,
+		marginBottom: 20,
+		paddingVertical: 5,
+		alignItems: 'center',
+		backgroundColor: '#FF9800',
+		borderColor: '#F6820D',
+		borderWidth: 1,
+		borderRadius: 5,
+		width: 200
 	}
 })
 
