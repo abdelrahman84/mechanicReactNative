@@ -63,14 +63,14 @@ const styles = StyleSheet.create({
     },
     button: {
         marginTop: 30,
-        marginBottom: 20,
-        paddingVertical: 5,
-        alignItems: 'center',
-        backgroundColor: '#808080',
-        borderColor: '#FFA611',
-        borderWidth: 1,
-        borderRadius: 5,
-        width: 200
+		marginBottom: 20,
+		paddingVertical: 5,
+		alignItems: 'center',
+		backgroundColor: '#808080',
+		borderColor: '#F6820D',
+		borderWidth: 1,
+		borderRadius: 5,
+		width: 200
     },
     buttonText: {
         fontSize: 20,
