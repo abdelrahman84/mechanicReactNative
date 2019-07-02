@@ -6,8 +6,17 @@ export const UPDATE_EMAIL = 'UPDATE_EMAIL'
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD'
 export const LOGIN = 'LOGIN'
 export const SIGNUP = 'SIGNUP'
+export const UPDATE_USERNAME = 'PDATE_USERNAME'
+
 
 // actions
+
+export const updateUserName = userName => {
+    return {
+        type: UPDATE_USERNAME,
+        payload: userName
+    }
+}
 
 export const updateEmail = email => {
     return {
@@ -59,7 +68,8 @@ export const signup = () => {
 			if (response.user.uid) {
 				const user = {
 					uid: response.user.uid,
-					email: email
+                    email: email,
+                    userName: userName
 				}
 
 				db.collection('users')
